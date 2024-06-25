@@ -1,0 +1,616 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  display: grid;
+  grid-template-columns: 1.4fr 7fr 1.4fr;
+}
+.hamburger {
+  display: none;
+}
+.nav-container {
+  grid-column-start: 2;
+  display: flex;
+  margin: 1rem;
+}
+
+.follower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px; /* Adjusted to correctly set border-radius */
+    background-color: transparent;
+    border: solid 2px #bf4408;
+    transition: top 0.1s ease-out, left 0.1s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e65103;
+    transition: top 0.9s ease-out, left 0.9s ease-out;
+    pointer-events: none;
+  }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  padding-right: 5rem;
+}
+nav ul li {
+  padding: 1rem;
+}
+.theme-btn{
+    margin-left: 2rem;
+    color: #bf4408;
+    border: none;
+}
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  background: linear-gradient(to left, #000 50%, #bf4408 50%) right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  transition: 0.3s ease-out;
+}
+nav ul li a:hover {
+  background-position: left;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: auto;
+}
+
+.Action-btns {
+  display: flex;
+}
+.Action-btn {
+  position: relative;
+  padding: 10px 20px;
+  margin-left: 2rem;
+  font-size: 16px;
+  color: #bf4408;
+  background: none;
+  border: 2px solid #bf4408;
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+}
+.Action-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 200%;
+  height: 101%;
+  background-color: black;
+  border-radius: 50px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.Action-btn:hover::before {
+  transform: scaleX(1);
+}
+.btn2:hover {
+  color: #fff;
+}
+.btn1 {
+  background-color: #bf4408;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.Action-btns .btn1:hover {
+  background-color: #e65103;
+}
+.Action-btns .btn2 {
+  transition: 0.3s ease-in-out;
+}
+.Action-btns .btn2:hover {
+  background-color: #e65103;
+}
+.btn2 {
+  background-color: transparent;
+  color: #bf4408;
+  font-size: 1rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero {
+  grid-area: 2/1 / span 2 / span 4;
+  position: relative;
+}
+
+.hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 22rem;
+  opacity: 0.3;
+}
+.hero-container {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.hero-container h1 {
+  font-size: 3rem;
+  font-family: "STIX Two Text", serif;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+.hero-container p {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+
+.hero-Action-btn {
+  width: 142px;
+  height: 42px;
+  font-weight: 700;
+  margin-left: 2rem;
+  border-radius: 50px;
+  border: solid 1px #bf4408;
+}
+
+
+
+.featurs-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  display: flex;
+  gap: 24px;
+  margin-top: 3rem;
+}
+.features-left p {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  color: #000;
+  padding: 0.5rem;
+}
+.features-left h3 {
+  font-size: 35px;
+  font-family: "STIX Two Text", serif;
+  font-weight: 700;
+  color: #000;
+  padding: 0.5rem;
+}
+.features-right {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  color: #000;
+  padding: 0.5rem;
+  margin-top: 2rem;
+}
+.cards-parent-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  padding: 2rem 0rem;
+}
+.card img {
+  width: 445px;
+  height: 333px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 42px;
+}
+.card h3 {
+  font-size: 26px;
+  font-family: "STIX Two Text", serif;
+  font-weight: 500;
+  color: #000;
+}
+.card p {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  color: #000;
+}
+.Main-buttons {
+  display: flex;
+  gap: 12px;
+}
+.Main-buttons .Main-btn {
+  width: 168px;
+  height: 42px;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+  border: solid 1px #bf4408;
+}
+.Main-btn2 {
+  width: 143px;
+  height: 42px;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-left: 1rem;
+  border: solid 1px #bf4408;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16;
+  color: #bf4408;
+}
+.contact-us {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 7;
+  width: 100%;
+  display: flex;
+  margin-top: 10rem;
+  flex-direction: column;
+}
+.contact-us-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.contact-us-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-evenly;
+}
+.contact-us-header p {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  color: #000;
+}
+.contact-us-header h3 {
+  font-size: 35px;
+  font-family: "STIX Two Text", serif;
+  font-weight: 500;
+  color: #000;
+}
+.contact-us-header p + p {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color: #000;
+}
+.contact-card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.contact-card h3 {
+  font-size: 26px;
+  font-family: "STIX Two Text", serif;
+  font-weight: 500;
+  color: #000;
+}
+.contact-card p {
+  font-size: 18px;
+  padding: 0.5rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color: #000;
+}
+.contact-card p + p {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color: #000;
+}
+
+
+
+.footer-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 8;
+  margin-top: 10rem;
+}
+.footer-company-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footer-form .subtext1 {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  color: #000;
+}
+.footer-form .subtext {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000;
+}
+.footer-form form {
+  display: flex;
+  gap: 0.5rem;
+}
+.footer-form form input {
+  width: 356px;
+  height: 50px;
+  border-radius: 50px;
+  border: solid 1px black;
+  text-align: center;
+}
+.footer-form form button {
+  width: 127px;
+  height: 50px;
+  margin-left: 0.5rem;
+  border-radius: 50px;
+  border: solid 1px #bf4408;
+  background-color: transparent;
+  color: #bf4408;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+.footer-form img {
+  width: 145px;
+  height: 32px;
+}
+
+.footer-link ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1rem;
+  list-style: none;
+}
+
+.footer-link ul li {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+}
+.footer-link h3 {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  margin: 0 1rem;
+}
+.footer-social-media ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  margin: 1rem;
+}
+.footer-social-media ul li {
+  display: flex;
+  gap: 12px;
+}
+.footer-social-media ul li p {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+}
+.footer-social-media h3 {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  margin: 0 1rem;
+}
+.footer-copyrights {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0rem;
+}
+.footer-copyrights ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+.footer-copyrights p,
+.footer-copyrights ul li {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+}
+hr {
+  width: 100%;
+  border: 1px solid #000;
+}
+@media only screen and (max-width: 430px) {
+  nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    visibility: visible;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    padding: 0;
+  }
+  .App {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .card {
+    padding: 1rem;
+    width: auto;
+  }
+  .contact-us-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 2rem 0rem;
+  }
+  .footer-company-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .footer-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-form form button {
+    width: 356px;
+    margin-left: 0;
+  }
+  .footer-link,
+  .footer-social-media,
+  .footer-social-media ul {
+    text-align: center;
+    align-items: center;
+  }
+  .footer-copyrights,
+  .footer-copyrights ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .featurs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 2rem;
+  }
+  .Main-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 2rem;
+  }
+  .Main-buttons .Main-btn,
+  .Main-btn2 {
+    width: 100%;
+    margin-left: 0;
+  }
+  .hero img {
+    height: 30rem;
+  }
+  .Action-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem;
+  }
+  .hero-Action-btn {
+    width: 300px;
+    margin-left: 0%;
+  }
+}
+@media only screen and (min-width: 426px) and (max-width: 1400px) {
+  .App-container {
+    display: grid;
+    grid-template-columns: 0.5fr 11fr 0.5fr;
+  }
+  .featurs-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    display: flex;
+    gap: 24px;
+    margin-top: 5rem;
+    padding: 2rem;
+    justify-content: space-around;
+  }
+  .card img {
+    width: 100%;
+    height: 333px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .card {
+    min-width: 100px;
+    max-width: 445px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+  }
+  .cards-container {
+    padding: 0 4rem;
+  }
+  .Main-buttons {
+    padding: 3rem;
+  }
+  .footer-container {
+    padding-left: 1rem;
+  }
+  hr {
+    margin-top: 5rem;
+  }
+  .contact-us-cards {
+    padding: 1rem;
+  }
+  .footer-container {
+    padding: 1rem;
+  }
+}
